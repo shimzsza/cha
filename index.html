@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ace Caniedo | Portfolio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-container">
+        <img src="wife.jpg" alt="logo" class="logo-img" />
+        <h1 class="logo">AceCaniedo</h1>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Dark Mode Toggle -->
+      <button class="theme-toggle" title="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Hi, I'm <span class="highlight">Ace Caniedo</span></h2>
+      <p class="subtitle">An aspiring <strong>IT Student & Web Developer</strong> passionate about building modern and creative digital experiences.</p>
+      <a href="#projects" class="cta-button">View My Work</a>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="brain.jpg" alt="Ace Caniedo" style="width:100%; border-radius:10px;">
+        <div class="about-text">
+          <p>Hello! I'm <strong>Ace Caniedo</strong>, a freshman IT student with a love for technology, music, and creativity. I enjoy solving real-life problems through design and code.</p>
+          <p>I'm currently learning <strong>HTML, CSS, Java, and C#</strong> — and I love experimenting with new projects that challenge my skills.</p>
+          <p>My goal is to become a full-stack developer who creates beautiful and functional web applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="maya.jpg" alt="Project 1">
+          <h3>PayNgayon App Prototype</h3>
+          <p>A payment app prototype similar to PayMaya, designed for easy transactions and a clean user interface.</p>
+          <a href="https://www.maya.ph/" class="project-link">View Details</a>
+        </div>
+
+        <div class="project-card">
+          <img src="spoti.jpg" alt="Project 2">
+          <h3>Music & Podcast Web App</h3>
+          <p>A Spotify-inspired app built using HTML and Tailwind CSS for streaming music and podcasts.</p>
+          <a href="https://www.youtube.com/watch?v=y_m1Ta0Qj1c" class="project-link">View Details</a>
+        </div>
+
+        <div class="project-card">
+          <img src="fit.jpg" alt="Project 3">
+          <h3>Calorie Tracker System</h3>
+          <p>A Java-based calorie tracking app that helps users monitor their diet and health goals.</p>
+          <a href="https://www.youtube.com/watch?v=V0zxK9ZHX9w" class="project-link">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li><img src="htlogo.jpg" alt="HTML5 Logo" class="skill-img"><br>HTML5</li>
+        <li><img src="csslogo.png" alt="CSS3 Logo" class="skill-img"><br>CSS3</li>
+        <li><img src="java.jpg" alt="Java Logo" class="skill-img"><br>Java</li>
+        <li><img src="sql.png" alt="SQL Logo" class="skill-img"><br>SQL</li>
+        <li><img src="csharp.png" alt="C# Logo" class="skill-img"><br>C#</li>
+        <li><img src="resp.png" alt="Responsive Design Logo" class="skill-img"><br>Responsive Design</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> caniedoace04@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Taguig City, Philippines</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Ace Caniedo | Built with 💜 Passion & Creativity</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Contact Form Alert
+    const contactForm = document.querySelector('.contact-form');
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('📩 Message sent successfully! Thank you, kupal💜');
+      contactForm.reset();
+    });
+
+    // Dark Mode Toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      themeToggle.innerHTML = isDark
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+    });
+  });
+  </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // --- NAV MENU ---
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // --- SMOOTH SCROLL ---
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // --- CONTACT FORM POPUP ---
+  const contactForm = document.querySelector('.contact-form');
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const popup = document.createElement('div');
+    popup.className = 'popup-message';
+    popup.textContent = '📩 Message sent successfully! Thank you, Ace 💜';
+    document.body.appendChild(popup);
+    setTimeout(() => popup.remove(), 3000);
+    contactForm.reset();
+  });
+
+  // --- DARK MODE SYSTEM ---
+  const themeToggle = document.querySelector('.theme-toggle');
+  const body = document.body;
+
+  // Detect saved theme or system preference
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    body.classList.add('dark-mode');
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    themeToggle.innerHTML = isDark
+      ? '<i class="fas fa-sun"></i>'
+      : '<i class="fas fa-moon"></i>';
+  });
+});
+</script>
+
+</body>
+</html>
